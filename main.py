@@ -1,14 +1,18 @@
 import random
 
-secret_number = random.randint(1,100)
+play_again = "yes"
 
-print("I'm thinking of a number between 1 and 100!")
-guess = None
-while guess != secret_number:
-    guess = int(input("Try to guess the number I'm thinking of: "))
-    if guess < secret_number:
-        print("Too low! Guess again.")
-    elif guess > secret_number:
-        print("Too high! Guess again.")
-    else:
-        print("That's it!")
+while play_again.lower() == "yes":
+    secret_number = random.randint(1, 100)
+    print("I'm thinking of a number between 1 and 100!")
+    guess = None
+    while guess != secret_number:
+        guess = int(input("Try to guess the number I'm thinking of: "))
+        if guess < secret_number:
+            print("Too low! Guess again.")
+        elif guess > secret_number:
+            print("Too high! Guess again.")
+        else:
+            print("That's it!")
+    play_again = input("Would you like to play again? (yes/no)")
+print("Thanks for playing!")
