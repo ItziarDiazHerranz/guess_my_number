@@ -18,6 +18,6 @@ while play_again.lower() == "yes":
             else:
                 print(f"That's it! You got it in {attempts} tries!")
         except ValueError:
-            print("Thats not a number! Try again")
+            print("Thats not a number! Try again.")
     play_again = input("Would you like to play again? (yes/no)")
 print("Thanks for playing!")
