@@ -8,13 +8,16 @@ while play_again.lower() == "yes":
     guess = None
     attempts = 0
     while guess != secret_number:
-        guess = int(input("Try to guess the number I'm thinking of: "))
-        attempts += 1
-        if guess < secret_number:
-            print("Too low! Guess again.")
-        elif guess > secret_number:
-            print("Too high! Guess again.")
-        else:
-            print(f"That's it! You got it in {attempts} tries!")
+        try:
+            guess = int(input("Try to guess the number I'm thinking of: "))
+            attempts += 1
+            if guess < secret_number:
+                print("Too low! Guess again.")
+            elif guess > secret_number:
+                print("Too high! Guess again.")
+            else:
+                print(f"That's it! You got it in {attempts} tries!")
+        except ValueError:
+            print("Thats not a number! Try again")
     play_again = input("Would you like to play again? (yes/no)")
 print("Thanks for playing!")
